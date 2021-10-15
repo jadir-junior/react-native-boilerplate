@@ -1,3 +1,27 @@
+# Configuração do Prettier
+
+Instale o prittier `yarn add prettier -D`
+
+criar um arquivo no root do projeto **.prettierrc**
+
+```
+{
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true
+}
+```
+
+adicionar nos scripts do **package.json** dois scripts um para verificar arquivos que estejam não estejam com os estilos padrão do projeto e outro para corrigir
+
+```
+"scripts: {
+  ...
+  "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
+  "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'"
+}
+```
+
 # Configuração do Jest
 
 ## Instalação
