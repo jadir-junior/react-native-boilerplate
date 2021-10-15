@@ -11,7 +11,8 @@
     "test:update:snapshoots": "jest -u --coverage=false",
     "test": "jest",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
-    "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'"
+    "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'",
+    "prepare": "husky install"
   },
   "jest": {
     "preset": "jest-expo",
@@ -30,7 +31,7 @@
   "lint-staged": {
     "src/**/*": [
       "yarn prettier:fix",
-      "yarn test --bail"
+      "yarn test --findRelatedTests --bail"
     ]
   },
   "husky": {
