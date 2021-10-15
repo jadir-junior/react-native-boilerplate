@@ -9,6 +9,5 @@ describe("<App />", () => {
     expect(
       getByText(/open up app\.tsx to start working on your app/i)
     ).toBeDefined();
-    expect(toJSON()).toMatchSnapshot();
   });
 });
