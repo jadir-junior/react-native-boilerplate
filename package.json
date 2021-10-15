@@ -12,7 +12,8 @@
     "test": "jest",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
     "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "jest": {
     "preset": "jest-expo",
@@ -33,11 +34,6 @@
       "yarn prettier:fix",
       "yarn test --findRelatedTests --bail"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "expo": "~42.0.1",
