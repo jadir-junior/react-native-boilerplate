@@ -30,7 +30,7 @@
   "lint-staged": {
     "src/**/*": [
       "yarn prettier:fix",
-      "yarn test --findRelatedTests --bail"
+      "yarn test --bail"
     ]
   },
   "husky": {
