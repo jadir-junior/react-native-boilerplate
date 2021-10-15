@@ -113,3 +113,38 @@ export * from '@testing-library/react-native'
 // override render method
 export {customRender as render}
 ```
+
+# Configuração do styled components
+
+Instalação de todas as dependencias:
+
+```
+yarn add styled-components && yarn add @types/styled-components-react-native @testing-libraryjest-native -D
+```
+
+Para instalação do **styled components** `yarn add styled-components`, `yarn add @types/styled-components-react-native -D` e `yarn add @testing-library/jest-native -D`
+
+Para que o **Testing Library** tenha as propriedades de estilos do **styled components**:
+
+```
+toBeDisabled()
+toContainElement(element: ReactTestInstace | null)
+toBeEmpty()
+toHaveProps(atts: string, value?: any)
+toHaveTextContent(text:string | RegExp, options?: { normalizeWhiteSpace: boolean})
+toBeEnabled()
+toHaveStyle(style: object[] | object)
+```
+
+é necessário importar o **testing library jest native** no topo do arquivo
+
+```
+import @testing-library/jest-native/extend-expect
+```
+
+caso tenha o util do **Testing Library** pode ser importado nele, assim replica global para todos os testes.
+
+```
+// utils/test-utils.tsx
+import @testing-library/jest-native/extend-expect
+```

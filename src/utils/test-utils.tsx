@@ -1,3 +1,5 @@
+import "@testing-library/jest-native/extend-expect";
+
 import {
   RenderAPI,
   RenderOptions,
