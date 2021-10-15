@@ -32,4 +32,6 @@ describe('<Button />', () => {
       color: 'white'
     })
   })
+
+  it('should alter test husky', () => {})
 })

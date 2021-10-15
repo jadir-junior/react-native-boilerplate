@@ -172,3 +172,47 @@ caso tenha o util do **Testing Library** pode ser importado nele, assim replica 
 // utils/test-utils.tsx
 import @testing-library/jest-native/extend-expect
 ```
+
+# Configuração do Husky
+
+Husky serve para que antes dos commit consiga validar se styleguide do código e testes estão corretos
+
+1. Instale o **husky v7**
+
+```
+yarn add husky -D
+```
+
+2. Habilite o Git hooks
+
+```
+npx husky install
+```
+
+3. configure o **package.json** e rode `yarn prepare`
+
+```
+// package.json
+{
+  "scripts": {
+    ...
+    "prepare": "husky install"
+  }
+}
+```
+
+4. Crie os hooks
+
+```
+npx husky add .husk/pre-commit "yarn test"
+```
+
+5. Caso deseje modificar os hooks conforme os scripts após criado é só ir na arquivo **.husky/pre-commit** e alterar a quarta linha onde estão os commandos de yar
+
+```
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+yarn prettier:check && yarn test
+
+```
