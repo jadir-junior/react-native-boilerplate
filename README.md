@@ -216,3 +216,58 @@ npx husky add .husk/pre-commit "yarn test"
 yarn prettier:check && yarn test
 
 ```
+
+# Configuração do Plop
+
+1. Instale o Plop
+
+```
+yarn add plop -D
+```
+
+2. Crie um arquivo **plopfile.js** no root do projeto que terá sua logica de cli
+
+```
+module.exports = (plop) => {
+  plop.setGenerator('component', {
+    description: 'Create a component',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is your component name?'
+      }
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/components/{{pascalCase name}}.tsx',
+        templateFile: 'plop-templates/Component.tsx.hbs'
+      }
+    ]
+  })
+}
+
+```
+
+3. Crie uma pasta para os templates no **root** do projeto e adicione o script no **package.json**
+
+```
+plop-templates/Components.tsx.hbs
+```
+
+```
+// package.json
+"scripts": {
+  ...
+  "generate": "plop"
+}
+```
+
+4. Crie o template conforme sua aplicação / fica de exemplo o plopfile.js do projeto onde tem screen e components
+
+5. Para criar os templates é só usar os definidos por exemplo:
+
+```
+yarn generate component chip
+```

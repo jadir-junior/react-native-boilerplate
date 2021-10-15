@@ -12,6 +12,7 @@
     "test": "jest",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx}'",
     "prettier:fix": "prettier --write 'src/**/*.{ts,tsx}'",
+    "generate": "plop",
     "prepare": "husky install"
   },
   "jest": {
@@ -47,6 +48,7 @@
     "@types/styled-components-react-native": "^5.1.1",
     "husky": "^7.0.2",
     "jest-expo": "^42.1.0",
+    "plop": "^2.7.4",
     "prettier": "^2.4.1",
     "typescript": "~4.0.0"
   },

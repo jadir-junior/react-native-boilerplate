@@ -1,0 +1,12 @@
+import { {{pascalCase name}} } from './{{pascalCase name}}.component'
+import React from 'react'
+import { render } from '@testing-library/react-native'
+// import { render } from '../../utils/test-utils'
+
+describe('<{{pascalCase name}} />', () => {
+  it('should render the component', () => {
+    const { getByText } = render(<{{pascalCase name}} />)
+
+    expect(getByText(/component/i)).toBeDefined()
+  })
+})
