@@ -172,3 +172,9 @@ caso tenha o util do **Testing Library** pode ser importado nele, assim replica 
 // utils/test-utils.tsx
 import @testing-library/jest-native/extend-expect
 ```
+
+# Configuração do Husky
+
+Husky serve para que antes dos commit consiga validar se styleguide do código e testes estão corretos
+
+Instale o **husky** e o lint-staged `yarn add husky -D` e `yarn add lint-staged -D`

@@ -27,6 +27,17 @@
       "!**/jest.setup.js"
     ]
   },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn prettier:fix",
+      "yarn test --findRelatedTests --bail"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
@@ -44,7 +55,9 @@
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
     "@types/styled-components-react-native": "^5.1.1",
+    "husky": "^7.0.2",
     "jest-expo": "^42.1.0",
+    "lint-staged": "^11.2.3",
     "prettier": "^2.4.1",
     "typescript": "~4.0.0"
   },
