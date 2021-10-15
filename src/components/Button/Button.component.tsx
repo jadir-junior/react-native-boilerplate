@@ -4,10 +4,10 @@ import React from 'react'
 
 export type ButtonProps = {
   title: string
-  color?: 'primary'
+  color?: 'default' | 'primary'
 }
 
-const Button = ({ title, color = 'primary' }: ButtonProps) => (
+const Button = ({ title, color = 'default' }: ButtonProps) => (
   <S.Button accessibilityLabel={title} color={color}>
     <S.ButtonText color={color}>{title}</S.ButtonText>
   </S.Button>
